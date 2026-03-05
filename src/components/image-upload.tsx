@@ -35,8 +35,8 @@ export function ImageUpload({ onImageSelected }: ImageUploadProps) {
   });
 
   return (
-    <div {...getRootProps()} className="w-full cursor-pointer">
-      <input {...getInputProps()} />
+    <div {...getRootProps()} className="w-full cursor-pointer" aria-label="Image upload area" role="button" tabIndex={0}>
+      <input {...getInputProps()} aria-label="Upload an image file" />
       <motion.div
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}

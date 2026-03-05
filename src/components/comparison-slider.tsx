@@ -75,6 +75,12 @@ export function ComparisonSlider({ originalUrl, processedUrl }: ComparisonSlider
         style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
         onMouseDown={() => setIsDragging(true)}
         onTouchStart={() => setIsDragging(true)}
+        role="slider"
+        aria-label="Image comparison slider"
+        aria-valuenow={Math.round(sliderPosition)}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        tabIndex={0}
       >
         <div className="absolute inset-y-0 w-0.5 bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
         <div className="absolute w-8 h-8 bg-white border border-slate-200 rounded-full flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">

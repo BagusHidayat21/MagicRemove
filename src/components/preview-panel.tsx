@@ -79,10 +79,11 @@ export function PreviewPanel({ image, onReset, onProcess }: PreviewPanelProps) {
                   <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px] flex items-center justify-center">
                     <button
                       onClick={onProcess}
+                      aria-label="Remove background from uploaded image"
                       className="group flex flex-col items-center px-8 py-5 bg-blue-600 text-white rounded-2xl font-bold text-lg hover:bg-blue-700 hover:scale-[1.02] transition-all shadow-lg shadow-blue-600/20 active:scale-95 border border-blue-500"
                     >
                       <span className="flex items-center gap-2">
-                        <Sparkles className="w-5 h-5 text-blue-200" />
+                        <Sparkles className="w-5 h-5 text-blue-200" aria-hidden="true" />
                         Remove Background
                       </span>
                       <span className="text-xs font-normal text-blue-200 mt-1">High quality, automatic precision</span>
@@ -112,6 +113,7 @@ export function PreviewPanel({ image, onReset, onProcess }: PreviewPanelProps) {
                     <p className="text-sm font-medium text-slate-500 mt-1 mb-6 text-center max-w-sm">{image.error}</p>
                     <button
                       onClick={onProcess}
+                      aria-label="Retry background removal"
                       className="px-6 py-2.5 bg-white hover:bg-slate-50 text-slate-800 rounded-full transition-colors border border-slate-200 shadow-sm font-medium text-sm"
                     >
                       Try Again
@@ -126,9 +128,10 @@ export function PreviewPanel({ image, onReset, onProcess }: PreviewPanelProps) {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 pt-6 border-t border-slate-100">
           <button
             onClick={onReset}
+            aria-label="Upload a new image"
             className="w-full sm:w-auto flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-slate-600 bg-white border border-slate-200 shadow-sm hover:bg-slate-50 hover:text-slate-900 transition-colors"
           >
-            <RefreshCcw className="h-4 w-4" />
+            <RefreshCcw className="h-4 w-4" aria-hidden="true" />
             Upload New Image
           </button>
 
@@ -141,10 +144,11 @@ export function PreviewPanel({ image, onReset, onProcess }: PreviewPanelProps) {
               >
                 <button
                   onClick={handleDownload}
+                  aria-label="Download processed image result"
                   className="w-full sm:w-auto relative group px-8 py-2.5 rounded-xl bg-blue-600 text-white text-sm font-bold shadow-md shadow-blue-500/20 hover:bg-blue-700 hover:shadow-lg transition-all active:scale-95 border border-blue-500"
                 >
                   <span className="flex items-center justify-center gap-2">
-                    <Download className="h-4 w-4" />
+                    <Download className="h-4 w-4" aria-hidden="true" />
                     Download Result
                   </span>
                 </button>
