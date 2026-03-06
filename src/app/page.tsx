@@ -30,13 +30,11 @@ export default function Home() {
         },
       });
 
-      const mockResultUrl = currentImage.previewUrl;
-
       setCurrentImage((prev) =>
         prev ? {
           ...prev,
           status: 'success',
-          processedUrl: mockResultUrl
+          processedUrl: response.data.processedUrl || currentImage.previewUrl
         } : null
       );
     } catch (error) {
